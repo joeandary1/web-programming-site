@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the Internet</title>
-</head>
-<body>
-    <header>
+{% extends "base.html" %}
+
+{% block title %}History of the Internet — AI Version | Joe Andary's Portfolio{% endblock %}
+
+{% block content %}
+    <header class="page-heading">
+        <p class="eyebrow">Week 2 · AI-assisted version</p>
         <h1>History of the Internet</h1>
+        <p>A concise timeline of the network technologies that shaped the modern Internet.</p>
     </header>
 
-    <main>
+    <div class="content-stack">
         <section>
             <h2>Introduction</h2>
             <p>
@@ -76,10 +75,5 @@
                 <p>Converts domain names into IP addresses.</p>
             </article>
         </section>
-    </main>
-
-    <footer>
-        <p>Created for GIN446 – Web Programming</p>
-    </footer>
-</body>
-</html>
+    </div>
+{% endblock %}

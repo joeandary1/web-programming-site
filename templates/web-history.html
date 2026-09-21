@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>History of the Internet</title>
-</head>
-<body>
-<header>
-    <h1>History of the Internet</h1>
-</header>    
+{% extends "base.html" %}
+
+{% block title %}History of the World Wide Web | Joe Andary's Portfolio{% endblock %}
+
+{% block content %}
+<header class="page-heading">
+    <p class="eyebrow">Week 2 · Hand-written version</p>
+    <h1>History of the World Wide Web</h1>
+    <p>The story of the Web, from Tim Berners-Lee's proposal to the standards used today.</p>
+</header>
+
+<div class="content-stack">
     <section>
         <h2>Topic 2: History of the World Wide Web</h2>
 
         <article>
-            <h3 style="color: red;">Introduction</h3>
+            <h3>Introduction</h3>
             <p>The World Wide Web is a system used to access webpages and information through the Internet. It was created by Tim Berners-Lee at CERN.</p>
         </article>
 
         <article>
-            <h3 style="color: rgb(0, 128, 28);">Key Milestones</h3>
+            <h3>Key Milestones</h3>
             <h4>1989 — Web Proposal</h4>
             <p>Tim Berners-Lee proposed a system for sharing information using hypertext.</p>
             <h5>Why it mattered?</h5>
@@ -57,7 +60,7 @@
         </article>
 
         <article>
-            <h3 style="color: rgb(0, 128, 28);">Three Key Web Technologies</h3>
+            <h3>Three Key Web Technologies</h3>
             <h4>HTML</h4>
             <p>Structures the content of webpages.</p>
             <h4>HTTP</h4>
@@ -66,10 +69,5 @@
             <p>Identifies the address of a resource on the Web.</p>
         </article>
     </section>
-    
-    <footer>
-    <p>Educational purposes only.</p>
-</footer>
-</body>
-</html>
-```
+</div>
+{% endblock %}

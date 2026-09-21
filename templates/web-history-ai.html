@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the World Wide Web</title>
-</head>
-<body>
-    <header>
+{% extends "base.html" %}
+
+{% block title %}History of the Web — AI Version | Joe Andary's Portfolio{% endblock %}
+
+{% block content %}
+    <header class="page-heading">
+        <p class="eyebrow">Week 2 · AI-assisted version</p>
         <h1>History of the World Wide Web</h1>
+        <p>A concise timeline of the ideas and standards behind the Web.</p>
     </header>
 
-    <main>
+    <div class="content-stack">
         <section>
             <h2>Introduction</h2>
             <p>
@@ -82,10 +81,5 @@
             <p>The Internet is the network that connects computers and devices.</p>
             <p>The World Wide Web is a system that uses the Internet to access websites and information.</p>
         </section>
-    </main>
-
-    <footer>
-        <p>Created for GIN446 – Web Programming</p>
-    </footer>
-</body>
-</html>
+    </div>
+{% endblock %}

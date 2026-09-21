@@ -1,19 +1,20 @@
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>History of the Internet</title>
-</head>
-<body>
-<header>
+{% extends "base.html" %}
+
+{% block title %}History of the Internet | Joe Andary's Portfolio{% endblock %}
+
+{% block content %}
+<header class="page-heading">
+    <p class="eyebrow">Week 2 · Hand-written version</p>
     <h1>History of the Internet</h1>
-    <nav>
-        <a href="#topic1">Internet History</a> |
-        <a href="#conclusion">Conclusion</a>
-    </nav>
+    <p>This page explains how the Internet developed and identifies three technologies that make it work.</p>
 </header>
 
-<main>
+<nav class="page-nav" aria-label="On this page">
+    <a href="#topic1">Internet History</a>
+    <a href="#conclusion">Conclusion</a>
+</nav>
+
+<div class="content-stack">
     <h2>Introduction</h2>
     <p>This page explains the history of the Internet.</p>
 
@@ -21,12 +22,12 @@
         <h2>Topic 1: History of the Internet</h2>
 
         <article>
-            <h3 style="color: red;">Introduction</h3>
+            <h3>Introduction</h3>
             <p>The Internet is a global network that connects computers and devices around the world. It developed over many years through advances in networking, communication protocols, and computer technology.</p>
         </article>
 
         <article>
-            <h3 style="color: rgb(0, 128, 28);">Key Milestones</h3>
+            <h3>Key Milestones</h3>
             <h4>1969 — ARPANET</h4>
             <p>ARPANET connected several research computers in the United States.</p>
             <h5>Why it mattered?</h5>
@@ -67,7 +68,7 @@
         </article>
 
         <article>
-            <h3 style="color: rgb(0, 128, 28);">Three Key Internet Technologies</h3>
+            <h3>Three Key Internet Technologies</h3>
             <h4>Packet Switching</h4>
             <p>Splits data into packets that can travel across a network.</p>
             <h4>TCP/IP</h4>
@@ -77,16 +78,11 @@
         </article>
     </section>
 
-    <section>
+<section id="conclusion">
         <h2>Conclusion</h2>
         <p>The Internet and the World Wide Web are different.</p>
         <p>The Internet is the network that connects computers and devices.</p>
     </section>
-</main>
+</div>
 
-<footer>
-    <p>Educational purposes only.</p>
-</footer>
-</body>
-</html>
-```
+{% endblock %}

@@ -1,37 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Programming Portfolio</title>
-</head>
-<body>
-    <header>
-        <h1>Web Programming Portfolio — joe andary</h1>
-        <p>A live site that grows one page or feature every week.</p>
-    </header>
+{% extends "base.html" %}
 
-    <main>
-        <section>
-            <h2>Weekly Work</h2>
-            <!-- Each week you add a link here to that week's page or feature. -->
-            <ul>
-                {% for item in weekly_work %}
-                    <li><a href="{{ item.url }}">Week {{ item.week }} — {{ item.title }}</a></li>
-                {% else %}
-                    <li>Week 1 — live site launched.</li>
-                {% endfor %}
-            </ul>
-        </section>
-    </main>
+{% block title %}Home | Joe Andary's Portfolio{% endblock %}
 
-<footer>
-<p>Web Programming — built with Flask and deployed on
-Render.</p>
-<p>This website is created for educational purposes
-only, as part of the GIN446 - Web Programming course,
-School of Engineering, USEK. (Fall 2026-2027)</p>
-</footer>
+{% block content %}
+<section class="hero">
+    <p class="eyebrow">Welcome</p>
+    <h1>Web Programming Portfolio</h1>
+    <p class="hero-text">A live website that grows with a new page or feature every week.</p>
+</section>
 
-</body>
-</html>
+<section aria-labelledby="weekly-work-title">
+    <div class="section-heading">
+        <p class="eyebrow">Course progress</p>
+        <h2 id="weekly-work-title">Weekly Work</h2>
+    </div>
+
+    <ul class="weekly-list">
+        {% for item in weekly_work %}
+        <li>
+            <a href="{{ url_for(item.endpoint) }}">
+                <span class="week-number">Week {{ item.week }}</span>
+                <span>{{ item.title }}</span>
+            </a>
+        </li>
+        {% else %}
+        <li>No weekly work has been added yet.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
