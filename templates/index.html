@@ -18,7 +18,7 @@
     <ul class="weekly-list">
         {% for item in weekly_work %}
         <li>
-            <a href="{{ url_for(item.endpoint) }}">
+            <a href="{{ item.url }}">
                 <span class="week-number">Week {{ item.week }}</span>
                 <span>{{ item.title }}</span>
             </a>
