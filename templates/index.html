@@ -4,23 +4,37 @@
 
 {% block content %}
 <section class="hero">
-    <p class="eyebrow">Welcome</p>
-    <h1>Web Programming Portfolio</h1>
-    <p class="hero-text">A live website that grows with a new page or feature every week.</p>
+    <div class="hero-text-box" data-aos="fade-right">
+        <p class="eyebrow"><i class="fa-solid fa-hand-wave"></i> Welcome to my workspace</p>
+        <h1>Creative Developer <br> & Engineering Student.</h1>
+        <p class="hero-text">Building the future of the web with clean code, liquid glass aesthetics, and interactive experiences at USEK.</p>
+        
+        <div class="hero-buttons">
+            <a href="#weekly-work-title" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> View My Work</a>
+            <a href="{{ url_for('submit_profile') }}" class="btn btn-secondary"><i class="fa-solid fa-file-lines"></i> Student Profile</a>
+        </div>
+    </div>
+    
+    <div class="hero-image-box" data-aos="fade-left" data-aos-delay="200">
+        <!-- You can change this image link later to a picture of yourself! -->
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Coding Setup" class="hero-img">
+        <div class="floating-badge"><i class="fa-brands fa-js"></i> JavaScript Ready</div>
+    </div>
 </section>
 
-<section aria-labelledby="weekly-work-title">
+<section aria-labelledby="weekly-work-title" data-aos="fade-up" data-aos-delay="100">
     <div class="section-heading">
-        <p class="eyebrow">Course progress</p>
-        <h2 id="weekly-work-title">Weekly Work</h2>
+        <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> Course progress</p>
+        <h2 id="weekly-work-title">Weekly Projects</h2>
     </div>
 
     <ul class="weekly-list">
         {% for item in weekly_work %}
-        <li>
+        <li data-aos="zoom-in" data-aos-delay="{{ loop.index0 * 100 }}">
             <a href="{{ item.url }}">
                 <span class="week-number">Week {{ item.week }}</span>
                 <span>{{ item.title }}</span>
+                <div class="card-icon"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
         </li>
         {% else %}
