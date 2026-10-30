@@ -1,6 +1,52 @@
 // ======================================================
 // QUESTIONS
 // ======================================================
+
+// ===============================
+// Show Results (WITH CONFETTI)
+// ===============================
+function showResults(score, percentage, message, correction) {
+    document.getElementById("quizPanel").style.display = "none";
+    
+    const resultsPanel = document.getElementById("resultsPanel");
+    resultsPanel.style.display = "block";
+    
+    // Add a nice fade-in animation to the results
+    resultsPanel.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 800, fill: "forwards" });
+
+    document.getElementById("scoreText").innerHTML = `<i class="fa-solid fa-bullseye"></i> Score: ${score} / ${questions.length}`;
+    document.getElementById("percentageText").innerHTML = `<i class="fa-solid fa-percent"></i> Percentage: ${percentage}%`;
+    document.getElementById("performanceText").textContent = message;
+    document.getElementById("correction").textContent = correction;
+
+    // Trigger Confetti if they passed!
+    if (percentage >= 50) {
+        var duration = 3000;
+        var end = Date.now() + duration;
+
+        (function frame() {
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#007aff', '#5856d6', '#ff2d55']
+            });
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#007aff', '#5856d6', '#ff2d55']
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
+    }
+}
+
 const questions = [
   {
     question: "Which keyword declares a block-scoped variable that can later be reassigned?",
